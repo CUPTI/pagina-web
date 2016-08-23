@@ -1,0 +1,83 @@
+.topic {
+	font-family: Roboto, Arial, Helvetica, sans-serif; sans-serif;
+  	background-color: #efefef;
+  	text-align: center;
+ }
+
+.topic h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.topic a {
+  color: #00b0ff;
+}
+
+.intro {
+	font-family: Roboto, Arial, Helvetica, sans-serif; sans-serif;
+  	background-color: #efefef;
+ }
+
+.navbar li {
+	font-size: 16px;
+	font-weight: 100;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.footer {	
+	height: 40px;
+	padding-top: 10px;
+	padding-bottom: 0;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #f8f8f8;
+}
+
+.footer a {
+	font-family: Roboto, Arial, Helvetica, sans-serif; sans-serif;
+}
+
+.jumbotron {
+	text-align: center;
+	margin-bottom: 15px;
+	
+	height: 500px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.services img {
+	height: 265px;
+}
+
+.project { 
+	background-color: #e0e0e0;
+	
+}
+
+.carousel-inner {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+#contact textarea {
+  width: 100%;
+}
+
+#contact input {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 5px;
+}
+
+#contact input[type=submit] {
+  border: 0px solid;
+  background-color: #BBBBBB;
+  padding: 10px;
+  margin: 1em 0;
+}
