@@ -1,18 +1,23 @@
 <?php 
 if(isset($_POST['submit'])){
-    $to = "info@cupti.com.uy";
-    $from = $_POST['email'];
-    $first_name = $_POST['name'];
-    $subject = "Mensaje desde el sitio web de CUPTI de " . $_POST['name'];
-    $subject2 = "Copia del mensaje enviado a CUPTI";
-    $message = $first_name . " escribio el siguiente mensaje:" . "\n\n" . $_POST['message'];
-    $message2 = "Hola " . $first_name . ",\n\nEsta es una copia de tu mensaje a CUPTI " . "\n\n" . $_POST['message'];
+	$secret="6LdrhigTAAAAAHau7hMKCy3ndPLTz-rzHMjgckP_";
+	$response=$_POST["g-recaptcha-response"];
+	$verify=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
+	$captcha_success=json_decode($verify);
 
-    $headers = "From:" . $from;
-    $headers2 = "From:" . $to;
-    mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,$headers2);
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
+	if ($captcha_success->success==true) {
+		$to = "info@cupti.com.uy";
+		$from = $_POST['email'];
+		$first_name = $_POST['name'];
+		$subject = "Mensaje desde el sitio web de CUPTI de " . $_POST['name'];
+		$subject2 = "Copia del mensaje enviado a CUPTI";
+		$message = $first_name . " escribio el siguiente mensaje:" . "\n\n" . $_POST['message'];
+		$message2 = "Hola " . $first_name . ",\n\nEsta es una copia de tu mensaje a CUPTI " . "\n\n" . $_POST['message'];
+		$headers = "From:" . $from;
+		$headers2 = "From:" . $to;
+		mail($to,$subject,$message,$headers);
+		mail($from,$subject2,$message2,$headers2);
+	}
 }
 ?>
 
@@ -33,6 +38,11 @@ if(isset($_POST['submit'])){
 	<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500" rel="stylesheet" type="text/css">   
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+		#map {
+			height: 49%;
+		}
+	</style>
 </head>
 
 <body>
@@ -58,7 +68,6 @@ if(isset($_POST['submit'])){
 					<li><a href="about.html">Nosotros</a></li>
 					<li><a href="services.html">Servicios</a></li>
 					<li><a href="projects.html">Proyectos</a></li>
-					<li><a href="partners.html">Asociaciones</a></li>
 					<li><a href="contact.php">Contacto</a></li>
 				</ul>
 			</div>			  
@@ -69,10 +78,11 @@ if(isset($_POST['submit'])){
 			<div class="col-sm-8 contact_form">             
 				<h2>Formulario de contacto</h2>
 				<?php 
-					if(isset($_POST['name'])){
+					if(isset($_POST['name'])) {
 						echo "<p>Correo enviado. Muchas gracias " . $first_name . ", te contactaremos a la brevedad.</p>";
-					}
+					}		
 				?>
+				<span id="captcha" style="color:red"></span>
 				<form id="contactform" method="post" action="">                    
 					<label for="name" id="nameLabel">Nombre <small>*</small></label>
 					<input id="name" maxlength="100" name="name" type="text">         
@@ -81,6 +91,7 @@ if(isset($_POST['submit'])){
 					<label for="message">Mensaje <small>*</small></label>
 					<textarea cols="40" id="message" name="message" rows="10"></textarea>         
 					<input type="submit" name="submit" class="send" value="Enviar Mensaje">
+					<div class="g-recaptcha" data-sitekey="6LdrhigTAAAAAE_XcXrigJY2QCl5NE_x7Q3jpHUH"></div>
 				</form>
 			</div>
 			<div class="col-sm-4 contact_info">
@@ -98,19 +109,21 @@ if(isset($_POST['submit'])){
 					<p><strong>Dirección</strong><br>
 						Colonia x Local 50<br>
 						Montevideo<br>
-						Uruguay</p>
-					</address>          
-				</div>
+						Uruguay
+					</p>
+				</address>     
+				<div id="map"></div>
 			</div>
 		</div>
+	</div>
 
-		
-		
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/gen_validatorv4.js"></script>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/gen_validatorv4.js"></script>
 		<!--<script language="JavaScript">
 			var frmvalidator  = new Validator("contactform");
 			frmvalidator.addValidation("name","req", "Please provide your name");
@@ -128,12 +141,20 @@ if(isset($_POST['submit'])){
 			})
 		});
 
-		function validateForm(){
-
+		function validateForm(){		
 			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 			var name = $('#name').val();
 			var email = $('#email').val();
 			var message = $('#message').val();
+
+			var v = grecaptcha.getResponse();
+			if(v.length == 0)
+			{
+				document.getElementById('captcha').innerHTML="Antes de enviar el mensaje debe precionar el CAPTCHA";
+				return false;
+			} else {
+				document.getElementById('captcha').innerHTML="";
+			}
 
 			$('.error').hide();
 
@@ -148,10 +169,31 @@ if(isset($_POST['submit'])){
 				$('#emailLabel').after('<span class="error">Por favor ingrese una direcci&oacute;n de email v&aacute;lida</span>');
 				return false;
 			}
+
 			return true;
 		}
 
 	</script>
+
+	<script>
+		function initMap() {
+			var myLatLng = {lat: -34.905439, lng: -56.197926};
+
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 16,
+				center: myLatLng
+			});
+
+			var marker = new google.maps.Marker({
+				position: myLatLng,
+				map: map,
+				title: 'CUPTI'
+			});
+		}
+	</script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL0G88i5AvuFQtisBjKonre73WRoNFnCI&callback=initMap">
+	</script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 	<div class="footer headers">
 
