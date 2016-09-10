@@ -53,23 +53,22 @@ body {
 	background-size: cover;
 }
 
-.services img {
-	height: 420px;
-}
 
 .top-buffer { 
-	margin-top: 15%; 
-	margin-bottom: 15%; 
+	margin-top: 5em; 
+	margin-bottom: 5em; 
 }
 
+
+
 a.services-label {
-	position: absolute;
-    right: 15px;
-    left: 15px;
-    top: 300px;
-    font-size: 25px;	
-    text-align: center;
     color: white;
+    font-size: 2em;
+    left: 15px;
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    top: 12em;
 }
 
 a.dise-meca {
