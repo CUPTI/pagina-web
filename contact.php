@@ -104,7 +104,7 @@ if(isset($_POST['submit'])){
 
 				<address>           
 					<p><strong>Dirección</strong><br>
-						Colonia x Local 50<br>
+						Colonia 924 - Local 50<br>
 						Montevideo<br>
 						Uruguay
 					</p>

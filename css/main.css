@@ -59,9 +59,13 @@ body {
 	margin-bottom: 5em; 
 }
 
+.container {
+	color: white;
+}
 
-
-
+.container a {
+    color: #d9d9d9;
+}
 
 .project { 
 	background-color: #e0e0e0;
