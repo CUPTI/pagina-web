@@ -1,5 +1,9 @@
 body {
-	background-image: url("../imgs/background.jpg");
+	background: url('../imgs/background.jpg') no-repeat center center fixed;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .topic {
