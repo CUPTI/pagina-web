@@ -35,6 +35,9 @@ body {
 	padding-left: 15px;
 	padding-right: 15px;
 	background-color: #f8f8f8;
+	position:fixed;
+	bottom: 0;
+	width: 100%
 }
 
 .footer a {
@@ -55,8 +58,8 @@ body {
 }
 
 .top-buffer { 
-	margin-top: 40px; 
-	margin-bottom: 40px; 
+	margin-top: 15%; 
+	margin-bottom: 15%; 
 }
 
 a.services-label {
