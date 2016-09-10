@@ -20,7 +20,6 @@ if(isset($_POST['submit'])){
 	}
 }
 ?>
-
 <html lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -29,7 +28,7 @@ if(isset($_POST['submit'])){
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Cooperativa Uruguaya de Producción y Tecnología">
 	<meta name="author" content="CUPTI">
-	<link rel="icon" href="imgs/cupti-logo.png">
+	<link rel="icon" href="imgs/logo.png">
 
 
 	<title>CUPTI - Cooperativa Uruguaya de Producción y Tecnología</title>
@@ -59,15 +58,13 @@ if(isset($_POST['submit'])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.html"><img src="imgs/cupti-logo.png" alt="CUPTI" width="70"></a>
+				<a href="index.html"><img src="imgs/logo.png" alt="CUPTI" width="230"></a>
 			</div>
 
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-
+					<li><a href="index.html">Inicio</a></li>
 					<li><a href="about.html">Nosotros</a></li>
-					<li><a href="services.html">Servicios</a></li>
-					<li><a href="projects.html">Proyectos</a></li>
 					<li><a href="contact.php">Contacto</a></li>
 				</ul>
 			</div>			  
@@ -132,7 +129,7 @@ if(isset($_POST['submit'])){
 		</script>
 	-->
 
-	<script language="JavaScript">
+	<script>
 
 		$(document).ready(function(){
 
