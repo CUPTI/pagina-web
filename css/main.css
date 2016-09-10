@@ -61,31 +61,7 @@ body {
 
 
 
-a.services-label {
-    color: white;
-    font-size: 2em;
-    left: 15px;
-    position: absolute;
-    width: 300px;
-    text-align: center;
-    top: 12em;
-}
 
-a.dise-meca {
-    background-color: #2A41C3;
-}
-
-a.efic-ener {
-    background-color: #DF7401;
-}
-
-a.ener-reno {
-    background-color: #3AAF57;
-}
-
-a.desa-soft {
-    background-color: #A4A4A4;
-}
 
 .project { 
 	background-color: #e0e0e0;
