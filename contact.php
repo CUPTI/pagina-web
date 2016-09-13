@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.html"><img src="imgs/logo.png" alt="CUPTI" width="230"></a>
+				<a href="index.html"><img class="brand-label" src="imgs/logo.png" alt="CUPTI" ></a>
 			</div>
 
 			<div class="navbar-collapse collapse">
