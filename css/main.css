@@ -28,22 +28,6 @@ body {
 	padding-bottom: 10px;
 }
 
-.footer {	
-	height: 40px;
-	padding-top: 10px;
-	padding-bottom: 0;
-	padding-left: 15px;
-	padding-right: 15px;
-	background-color: #f8f8f8;
-	position:fixed;
-	bottom: 0;
-	width: 100%
-}
-
-.footer a {
-	font-family: Roboto, Arial, Helvetica, sans-serif; sans-serif;
-}
-
 .jumbotron {
 	text-align: center;
 	margin-bottom: 15px;
@@ -52,7 +36,6 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
 
 .top-buffer { 
 	margin-top: 5em; 
@@ -69,7 +52,6 @@ body {
 
 .project { 
 	background-color: #e0e0e0;
-	
 }
 
 .carousel-inner {
@@ -83,12 +65,14 @@ body {
 
 #contact textarea {
 	width: 100%;
+	color: black;
 }
 
 #contact input {
 	width: 100%;
 	margin-bottom: 1em;
 	padding: 5px;
+	color: black;
 }
 
 #contact input[type=submit] {
@@ -101,4 +85,20 @@ body {
 .brand-label {
 	height: 70px; 
 	padding: 15px;
+}
+
+.footer {	
+	height: 40px;
+	padding-top: 10px;
+	padding-bottom: 0;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #f8f8f8;
+	position:fixed;
+	bottom: 0;
+	width: 100%
+}
+
+.footer a {
+	font-family: Roboto, Arial, Helvetica, sans-serif; sans-serif;
 }

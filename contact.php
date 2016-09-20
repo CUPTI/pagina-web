@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Cooperativa Uruguaya de Producción y Tecnología">
 	<meta name="author" content="CUPTI">
-	<link rel="icon" href="imgs/logo.png">
+	<link rel="icon" href="imgs/thumb.png">
 
 
 	<title>CUPTI - Cooperativa Uruguaya de Producción y Tecnología</title>
