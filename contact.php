@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Cooperativa Uruguaya de Producción y Tecnología">
+	<meta name="description" content="Cooperativa Uruguaya de Producci&oacute;n Trabajo e Ingenier&iacute;a">
 	<meta name="author" content="CUPTI">
 	<link rel="icon" href="imgs/thumb.png">
 
