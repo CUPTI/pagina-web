@@ -30,6 +30,8 @@ if(isset($_POST['submit'])){
 	<meta name="author" content="CUPTI">
 	<link rel="icon" href="imgs/thumb.png">
 
+	<meta name="keywords" content="cupti,cupti.com.uy,cupti ingnenieria,eficiencia,energetica,software,ambiental,diseño mecanico,cooperativa,uruguay">
+
 
 	<title>CUPTI - Cooperativa Uruguaya de Producci&oacute;n Trabajo e Ingenier&iacute;a</title>
 
